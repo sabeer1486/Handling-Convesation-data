@@ -1,8 +1,11 @@
-import os
-import pickle
-
-
 def print_lol(list_item, intend=False, level=0, fh=sys.stdout):
+    """
+    In this fuction 
+    list_item=list of data that we want to process,
+    intend=Ture it add tab spaces in fornt of the data, by default it is set to false
+    fh=file name that we want to save data. By default it prints data on screen
+    """
+    
     for new_list in list_item:
         if isinstance(new_list, list):
             print_lol(new_list, intend, level+1, fh)
@@ -11,9 +14,7 @@ def print_lol(list_item, intend=False, level=0, fh=sys.stdout):
                 for tab_space in range(level):
                     print("\t", end='', file=fh)
             print(new_list, file=fh)
-
-
-os.chdir('D:/file1/file2')
+            
 
 man = []
 other = []
